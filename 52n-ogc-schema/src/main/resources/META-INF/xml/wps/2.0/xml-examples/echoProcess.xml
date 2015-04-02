@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wps:ProcessOfferings xmlns:wps="http://www.opengis.net/wps/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ows="http://www.opengis.net/ows/2.0" xsi:schemaLocation="http://www.opengis.net/wps/2.0.0 ../wpsDescribeProcess.xsd">
+  <wps:ProcessOffering processVersion="1.0.0" jobControlOptions="sync-execute async-execute" outputTransmission="value reference">
+    <wps:Process>
+      <ows:Title>Echo process</ows:Title>
+      <ows:Abstract>A simple echo process for complex and literal data - get what you give.</ows:Abstract>
+      <ows:Identifier>org.n52.wps.server.algorithm.test.EchoProcess</ows:Identifier>
+      <wps:Input minOccurs="0" maxOccurs="1">
+        <ows:Title>literalInput</ows:Title>
+        <ows:Identifier>literalInput</ows:Identifier>
+        <ns:DataDescription xmlns:ns="http://www.opengis.net/wps/2.0.0" xsi:type="ns:LiteralDataType">
+          <ns:Format default="true" mimeType="text/plain"/>
+          <ns:Format mimeType="text/xml"/>
+          <LiteralDataDomain>
+            <ows:AnyValue/>
+            <ows:DataType ows:reference="xs:string"/>
+          </LiteralDataDomain>
+        </ns:DataDescription>
+      </wps:Input>
+      <wps:Input minOccurs="0" maxOccurs="1">
+        <ows:Title>complexInput</ows:Title>
+        <ows:Identifier>complexInput</ows:Identifier>
+        <ns:DataDescription xmlns:ns="http://www.opengis.net/wps/2.0.0" xsi:type="ns:ComplexDataType">
+          <ns:Format default="true" mimeType="text/xml"/>
+          <ns:Format mimeType="text/xml; subtype=gml/2.1.2" schema="http://schemas.opengis.net/gml/2.1.2/feature.xsd"/>
+        </ns:DataDescription>
+      </wps:Input>
+      <wps:Output>
+        <ows:Title>literalOutput</ows:Title>
+        <ows:Identifier>literalOutput</ows:Identifier>
+        <ns:DataDescription xmlns:ns="http://www.opengis.net/wps/2.0.0" xsi:type="ns:LiteralDataType">
+          <ns:Format default="true" mimeType="text/plain"/>
+          <ns:Format mimeType="text/xml"/>
+          <LiteralDataDomain>
+            <ows:DataType ows:reference="xs:string"/>
+          </LiteralDataDomain>
+        </ns:DataDescription>
+      </wps:Output>
+      <wps:Output>
+        <ows:Title>complexOutput</ows:Title>
+        <ows:Identifier>complexOutput</ows:Identifier>
+      </wps:Output>
+    </wps:Process>
+  </wps:ProcessOffering>
+</wps:ProcessOfferings>
