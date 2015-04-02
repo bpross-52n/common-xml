@@ -6,9 +6,9 @@
     <version>2.1.1-SNAPSHOT</version>
   </parent>
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>52n-xml-csw-v202</artifactId>
+  <artifactId>52n-xml-sosgda-v10</artifactId>
   <packaging>jar</packaging>
-  <name>OGC CSW schema (spec. v2.0.2)</name>
+  <name>OGC SOS GetDataAvailability schema 1.0 (OGC Best Practice 14-004r1)</name>
 	<licenses>
 		<license>
 			<name>The Apache Software License, Version 2.0</name>
@@ -22,15 +22,35 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>xmlbeans-maven-plugin</artifactId>
                 <configuration>
+                	<schemaDirectory>src/main/xsd</schemaDirectory>
                     <sourceSchemas>
-                        <sourceSchema>csw/2.0.2/CSW-discovery.xsd</sourceSchema>
-                        <sourceSchema>csw/2.0.2/CSW-publication.xsd</sourceSchema>
-                        <sourceSchema>csw/2.0.2/rec-dcmes.xsd</sourceSchema>
-                        <sourceSchema>csw/2.0.2/rec-dcterms.xsd</sourceSchema>
-                        <sourceSchema>csw/2.0.2/record.xsd</sourceSchema>
+						<sourceSchema>sosgda/1.0/gda.xsd</sourceSchema>
                     </sourceSchemas>
                 </configuration>
             </plugin>
+			
+			<plugin>
+				<groupId>com.mycila</groupId>
+				<artifactId>license-maven-plugin</artifactId>
+				<configuration>
+					<header>../misc/ogc-license-header.txt</header>
+					<aggregate>true</aggregate>
+					<includes>
+						<include>src/**/*.xsd</include>
+						<include>src/**/*.xml</include>
+					</includes>
+					<strictCheck>true</strictCheck>
+				</configuration>
+				<executions>
+					<execution>
+						<id>check-license</id>
+						<phase>initialize</phase>
+						<goals>
+							<goal>check</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
         </plugins>
     </build>
     <dependencies>
@@ -38,17 +58,26 @@
             <groupId>org.apache.xmlbeans</groupId>
             <artifactId>xmlbeans</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.n52.sensorweb</groupId>
-            <artifactId>52n-ogc-schema</artifactId>
-        </dependency>
 		<dependency>
 			<groupId>org.n52.sensorweb</groupId>
-			<artifactId>52n-xml-ows-v100</artifactId>
+			<artifactId>52n-ogc-schema</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.n52.sensorweb</groupId>
-			<artifactId>52n-xml-filter-v110</artifactId>
+			<artifactId>52n-oasis-schema</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.n52.sensorweb</groupId>
+			<artifactId>52n-w3c-schema</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.n52.sensorweb</groupId>
+			<artifactId>52n-xml-swes-v20</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.n52.sensorweb</groupId>
+			<artifactId>52n-xml-gml-v321</artifactId>
+		</dependency>
+
     </dependencies>
 </project>
