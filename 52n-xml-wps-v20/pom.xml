@@ -8,6 +8,7 @@
 	</parent>
 	<groupId>org.n52.wps</groupId>
 	<artifactId>52n-xml-wps-v20</artifactId>
+	<version>2.5.0-eoep</version>
 	<packaging>jar</packaging>
 	<name>OGC WPS schema (spec. v2.0)</name>
 	<inceptionYear>2015</inceptionYear>
@@ -38,10 +39,17 @@
 		<dependency>
 			<groupId>org.n52.sensorweb</groupId>
 			<artifactId>52n-ogc-schema</artifactId>
+		    <version>2.5.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>org.n52.sensorweb</groupId>
 			<artifactId>52n-xml-ows-v20</artifactId>
+		    <version>2.5.0-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.n52.sensorweb</groupId>
+			<artifactId>52n-xml-xlink-v110</artifactId>
+		    <version>2.5.0-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
 </project>

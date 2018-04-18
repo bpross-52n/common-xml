@@ -37,5 +37,7 @@
 	<include schemaLocation="wpsGetStatus.xsd"/>
 	<include schemaLocation="wpsGetResult.xsd"/>
 	<include schemaLocation="wpsDismiss.xsd"/>
+	<include schemaLocation="wpsDeployResult.xsd"/>
+	<include schemaLocation="wpsUndeployResult.xsd"/>
 	
 </schema>
