@@ -339,6 +339,13 @@
 											</documentation>
 										</annotation>
 									</enumeration>
+									<enumeration value="Authorization needed">
+										<annotation>
+											<documentation>
+												Authorization is needed.
+											</documentation>
+										</annotation>
+									</enumeration>
 								</restriction>
 							</simpleType>
 							<simpleType>
@@ -354,6 +361,20 @@
 						<documentation>
 							Estimated date and time by which the job will be completed. Use if available.
 							The time of estimated completion lies significantly before the expiration date of this job.
+						</documentation>
+					</annotation>
+				</element>
+				<element name="Input" type="string" minOccurs="0">
+					<annotation>
+						<documentation>
+							Input that authorization is needed for.
+						</documentation>
+					</annotation>
+				</element>
+				<element name="Message" type="string" minOccurs="0">
+					<annotation>
+						<documentation>
+							Message, e.g. authorization URL.
 						</documentation>
 					</annotation>
 				</element>
